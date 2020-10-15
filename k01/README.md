@@ -63,8 +63,8 @@ typedef struct {
 l71　iと一致したら、構造体に格納されているデータを返す.
 l73 iと一致するものを見つけたら-1を返す.
 
-binarがいまいちよくわからなかったです.
-
+centerがkeyを指したらその値をresultに入れる.centerよりkeyが右にあればcenterに+1をしてleftに代入する.
+centerよりkeyが左にあれば、cnterを-1をしてrihgtに代入する.
 ## 出力結果
 
 ===== linear search =====
@@ -72,8 +72,8 @@ City ID?42411
 42411, 長崎県, 新上五島町, 19718, 9197, 10521
 
 ===== binary search =====
-City ID?42201
-city was not found```
+City ID?42411
+42411, 長崎県, 新上五島町, 19718, 9197, 10521
 
 ```
 
