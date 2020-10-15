@@ -18,7 +18,7 @@ typedef struct {
 #define MAX_CITY    21
 
 
-void PrintCity(City city)
+void PrintCity(City city)/*画面に出力する関数*/
 {
     printf("%d, %s, %s, %d, %d, %d\n", city.id, city.pref, city.name, city.population, city.m_population, city.f_population);
 }
@@ -64,16 +64,39 @@ int LoadData(City arrayCity[])
 
 int LinearSearch(int key, City arrayCity[], int size)
 {
-    //  ここを実装する
-
-
+  int i=0;
+   for(i=0;i<size;i++)
+   {
+       if(arrayCity[i].id==key)
+       return (i);
+       if(i==size-1)
+       return (-1);
+   }
 }
+ //  ここを実装する
 
 int BinarySearch(int key, City arrayCity[], int left, int right)
 {
-    //  ここを実装する
-
-
+    int center;
+    int result=-1;
+    while(center>=left)
+    {
+        center=left+(right-left)/2;
+        if(arrayCity[center].id==key)
+        {
+            center=result;
+            break;
+        }
+        else if(arrayCity[center].id<key)
+        {
+            left=center+1;
+        }
+        else if(arrayCity[center].id>key)
+        {
+            right=center-1;
+        }
+    }//  ここを実装する
+    return result;
 }
 
 
@@ -82,6 +105,7 @@ int main(void)
 {
     int key;
     int result;
+
 
     //  事前準備。データの読み込み、配列の作成
     City* arrayCity;
@@ -98,9 +122,9 @@ int main(void)
     scanf("%d", &key);
     result = LinearSearch(key, arrayCity, MAX_CITY);
     if (result != -1) {
-        PrintCity(arrayCity[result]);
+        PrintCity(arrayCity[result]);/*resultが-1ではなかったらPrint Cityにgo、すなわち画面に出力する関数へ行く*/
     } else {
-        printf("city was not found\n");
+        printf("city was not found\n");/*-1であったら失敗*/
     }
 
     printf("\n===== binary search =====\n");
