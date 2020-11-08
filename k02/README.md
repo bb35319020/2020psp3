@@ -80,8 +80,8 @@ pNodeを返す.
 l109 int型でposを定義する.
 l110 アドレスがなくなるまで繰り返す
 l112 pListのcityの領域にあるidとIDが一致したら*pCityにpListのcityを入れる
-l117 pListにpListの先頭アドレスのpNextを入れる
-p118 pNodeが次の要素を指すようにposに+1する
+l117 pListが次の要素を指すように,pListにpListの先頭アドレスのpNextを入れる
+p118 posに+1する
 
 ## 出力結果
 
