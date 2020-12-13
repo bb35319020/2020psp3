@@ -90,7 +90,7 @@ char* BMSearch(char text[], char key[])//  ここを実装する
             }
     }
     if(key_index==0){
-        return text+index;
+        return text+index+1;
     }else{
         return NULL;
     }
