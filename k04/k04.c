@@ -105,12 +105,12 @@ void QuickSort(City arrayCity[], int left, int right)
     City pivot,temp;
     i=left;
     j=right;
-    pivot=arrayCity[i];
+    pivot=arrayCity[left];
     if(right!=left)
     {
         while(1)
         {
-            for(i=i+1;arrayCity[i].seafood<=pivot.seafood && right < i;i++)
+            for(i=i+1;arrayCity[i].seafood<=pivot.seafood && i < right;i++)
             for(j=j-1;pivot.seafood<arrayCity[j].seafood;j--)
             if(j<=i)
             {
@@ -130,10 +130,8 @@ void QuickSort(City arrayCity[], int left, int right)
 
         QuickSort(arrayCity,left,j-1);
         QuickSort(arrayCity,j+1,right);
-        
     }
 }
-
 void HeapSort(City arrayCity[], int size)
 {
     //  チャレンジ問題(1)
@@ -174,8 +172,6 @@ int main(void)
 //    MergeSort(arrayCity, 0, MAX_CITY - 1);
 //    HeapSort(arrayCity, MAX_CITY);
     PrintArray(arrayCity, MAX_CITY);
-
-
 
     //  後処理
     free(arrayCity);
