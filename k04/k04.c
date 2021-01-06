@@ -85,7 +85,7 @@ void BubbleSort(City arrayCity[], int size)
 
     for(j=0;j<size;j++)
     {
-        for(i=size;i>j;i--)
+        for(i=size-1;i>j;i--)
         {
             if(arrayCity[i].total<arrayCity[i-1].total)
             {
@@ -106,12 +106,12 @@ void QuickSort(City arrayCity[], int left, int right)
     i=left;
     j=right;
     pivot=arrayCity[left];
-    if(right!=left)
+    if(1<(right-left))
     {
         while(1)
         {
-            for(i=i+1;arrayCity[i].seafood<=pivot.seafood && i < right;i++)
-            for(j=j-1;pivot.seafood<arrayCity[j].seafood;j--)
+            for(;arrayCity[i].seafood<=pivot.seafood && i <= right;i++)
+            for(j=j-1;pivot.seafood<=arrayCity[j].seafood;j--)
             if(j<=i)
             {
             break;
