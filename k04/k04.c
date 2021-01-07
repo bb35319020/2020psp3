@@ -80,17 +80,57 @@ void BubbleSort(City arrayCity[], int size)
 {
     //  ここを実装する
 
+    int i,j;
+    City temp;
+
+    for(j=0;j<size;j++)
+    {
+        for(i=size-1;i>j;i--)
+        {
+            if(arrayCity[i].total<arrayCity[i-1].total)
+            {
+                temp=arrayCity[i];
+                arrayCity[i]=arrayCity[i-1];
+                arrayCity[i-1]=temp;
+            }
+        }
+    }
 }
 
 
 void QuickSort(City arrayCity[], int left, int right)
 {
-    //  ここを実装する
+    int i,j;
+    City pivot,temp;
+    i=left;
+    j=right;
+    pivot=arrayCity[left];
+    if(1<(right-left+1))
+    {
+        while(1)
+        {
+            for(;arrayCity[i].seafood<=pivot.seafood && i <= right;i++){}
+            for(;pivot.seafood<arrayCity[j].seafood;j--){}
+            if(j<=i)
+            {
+            break;
+            }
+            else
+            {
+                temp=arrayCity[i];
+                arrayCity[i]=arrayCity[j];
+                arrayCity[j]=temp;
+            }
+        }
 
+        temp=arrayCity[left];
+        arrayCity[left]=arrayCity[j];
+        arrayCity[j]=temp;
+
+        QuickSort(arrayCity,left,j-1);
+        QuickSort(arrayCity,j+1,right);
+    }
 }
-
-
-
 void HeapSort(City arrayCity[], int size)
 {
     //  チャレンジ問題(1)
@@ -131,8 +171,6 @@ int main(void)
 //    MergeSort(arrayCity, 0, MAX_CITY - 1);
 //    HeapSort(arrayCity, MAX_CITY);
     PrintArray(arrayCity, MAX_CITY);
-
-
 
     //  後処理
     free(arrayCity);
