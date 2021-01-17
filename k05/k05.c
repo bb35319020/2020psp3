@@ -106,7 +106,38 @@ int StackIsEmpty(void)
 void DepthFirstSearch(int size, int matrix[size][size], int start)
 {
     //  ここを実装する
+    int visited[size];
+    int i,j,k;
 
+    for(i=0;i<MAX_STATIONS;i++)
+    {
+        visited[i]=UNVISITED;
+    }
+    StackInit();
+    StackPush(start);
+    while(StackIsEmpty()==FALSE)
+    j=StackPop(); 
+
+    if(visited[j]==0)
+    {
+        visited[j]=1;
+
+        for(k=0;k<MAX_STATIONS;k++)
+        {
+            if(matrix[j][k]!=0)
+            {
+                StackPush(k);
+            }
+        }
+    }
+    for(i=0;i<MAX_STATIONS;i++)
+    {
+        if(visited[i]==VISITED)
+        {
+            printf("%d\n",MAX_STATIONS);
+            printf("%dは訪れた\n",i);
+        }
+    }
 }
 
 
