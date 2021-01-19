@@ -123,7 +123,7 @@ void DepthFirstSearch(int size, int matrix[size][size], int start)
         {
             visited[j]=1;
 
-            for(k=0;k<MAX_STATIONS;k++)
+            for(k=0;k<size;k++)
             {
                 if(matrix[j][k]!=0)
                 {
@@ -132,7 +132,7 @@ void DepthFirstSearch(int size, int matrix[size][size], int start)
             }
         }
     }
-    for(i=0;i<MAX_STATIONS;i++)
+    for(i=0;i<size;i++)
     {
         if(visited[i]==VISITED)
         {
