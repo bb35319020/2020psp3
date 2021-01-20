@@ -204,7 +204,37 @@ int QueueIsEmpty()
 void BreadthFirstSearch(int size, int matrix[size][size], int start)
 {
     //  ここを実装する
+    int visited[size];
+    int i,j,k;
 
+    for(i=0;i<size;i++)
+    {
+        visited[i]=UNVISITED;
+    }
+    InitQueue();
+    EnQueue(start);
+     while(QueueIsEmpty()==FALSE)
+    {
+        j=DeQueue(); 
+        if(visited[j]==0)
+        {
+           visited[j]=1;
+            for(k=0;k<size;k++)
+            {
+                if(matrix[j][k]!=0)
+                {
+                    EnQueue(k);
+                }
+            }
+        }
+    }
+    for(i=0;i<size;i++)
+    {
+        if(visited[i]==VISITED)
+        {
+            printf("%d is visited\n",i);
+        }
+    }
 }
 
 
