@@ -122,10 +122,23 @@ L125matrix[j][k]に対してkの値を0から1ずつ足していくことでmatr
 ## 出力結果
 
 ```
-8
 0は訪れた
+1は訪れた
+2は訪れた
+3は訪れた
+4は訪れた
+5は訪れた
+6は訪れた
+7は訪れた
+0 is visited
+1 is visited
+2 is visited
+3 is visited
+4 is visited
+5 is visited
+6 is visited
+7 is visited
 Time Required: 7
-
 ```
 
 ## 修正履歴
