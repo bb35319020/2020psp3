@@ -1,5 +1,5 @@
 # 課題5 レポート
-学生番号　氏名
+学生番号35319020　氏名京岡龍樹
 
 
 ## 課題
@@ -98,14 +98,47 @@ int AdjacencyMatrix[MAX_STATIONS][MAX_STATIONS] = {
     - 関数内でprintf文を使い、最短ルートを出力すること
 
 
-## ソースコードの説明
+## ソースコードの説
+l109,110定義
+L116stackを初期化し、stackに0を入れる
+stackが0になるまで繰り返しの処理を行う
+stackの一番上にある値をjに代入する
+visited[j]=0すなわち未だに言ったことがない場合は1にすることで行ったことがあるに変更する
+L125matrix[j][k]に対してkの値を0から1ずつ足していくことでmatrix[j]「0」matrix[j]「1」と確認していく
+この時matrix[j][k]が0でない所は今いる一から行くことが可能であることを意味している。
+0出なければそのkの値をstackにpushする
+
+l207,208定義
+L116Queueを初期化し、Queueに0を入れる
+Queueが空になるまで繰り返しの処理を行う
+Queueの一番右にある値を取り出しjに代入する
+visited[j]=0すなわち未だに言ったことがない場合は1にすることで行ったことがあるに変更する
+L125matrix[j][k]に対してkの値を0から1ずつ足していくことでmatrix[j]「0」matrix[j]「1」と確認していく
+この時matrix[j][k]が0でない所は今いる場所から行くことが可能であることを意味している。
+0出なければそのkの値をEnQueueする
 
 
 
 ## 出力結果
 
 ```
-
+0は訪れた
+1は訪れた
+2は訪れた
+3は訪れた
+4は訪れた
+5は訪れた
+6は訪れた
+7は訪れた
+0 is visited
+1 is visited
+2 is visited
+3 is visited
+4 is visited
+5 is visited
+6 is visited
+7 is visited
+Time Required: 7
 ```
 
 ## 修正履歴
